@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
-<% String username = (String) request.getSession().getAttribute("username"); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -8,7 +8,7 @@
         <title>セッションスコープのテスト</title>
     </head>
     <body>
-        <h1>こんにちは、<%= username %>さん！</h1>
+        <h1>こんにちは、<c:out value="${sessionScope.username}" />さん！</h1>
         <p><a href="session_c.jsp">次のページへ</a></p>
     </body>
 </html>
